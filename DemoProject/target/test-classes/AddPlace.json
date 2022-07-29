@@ -1,0 +1,16 @@
+{
+    "location": {
+        "lat": 38.383494,
+        "lng": 33.427362
+    },
+    "accuracy": 50,
+    "name": "HMP",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "my address",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "French-IN"
+}
