@@ -5,9 +5,13 @@ import org.testng.annotations.Test;
 import files.ReUsableMethods;
 import files.payload;
 import io.restassured.RestAssured;
+import io.restassured.mapper.ObjectMapper;
+import io.restassured.mapper.ObjectMapperDeserializationContext;
+import io.restassured.mapper.ObjectMapperSerializationContext;
 import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.*;
+
 
 public class JwtToken {
 	
@@ -15,7 +19,16 @@ public class JwtToken {
 	String clientPubKey;
 	String jwt;
 	
-	String sessionKey, cipherSessionKey, salt, publicKey, iv, beSessionKey, hsObject;
+	String sessionKey, cipherSessionKey, salt, publicKey, iv, beSessionKey, jwtHandShake, hsObject;
+	
+	private void handshakeOject() {
+		String salt;
+		String sessionkey;
+		String iv;
+		String jwt;
+		String publicKey;
+	
+	}
 	
 	
 	@Test (priority = 1)
@@ -65,15 +78,20 @@ public class JwtToken {
 		JsonPath js = ReUsableMethods.rawToJson(response);
 	
 		sessionKey = js.get("RequestID");
-		cipherSessionKey = js.get("Data.SessionKey");
+	
 		salt = js.get("Data.Salt");
-		publicKey = js.get("Data.PublicKey");
-		iv = js.get("Data.IV");
 		beSessionKey = js.get("Data.SessionKey");
-		
-		hsObject = js.getJsonObject("Data").toString();
-		
-		System.err.println(hsObject);
+		iv = js.get("Data.IV");
+		jwtHandShake = js.get("Data.JWT");
+		publicKey = js.get("Data.PublicKey");
+	
+		hsObject = "{\r\n"
+				+ "    \"Salt\": \""+salt+"\",\r\n"
+				+ "    \"SessionKey\": \""+ beSessionKey +"\",\r\n"
+				+ "    \"IV\": \""+ iv +"\",\r\n"
+				+ "    \"JWT\": \""+ jwtHandShake +"\",\r\n"
+				+ "    \"PublicKey\": \""+ publicKey +"\"\r\n"
+				+ "}";
 		
 	}
 	
