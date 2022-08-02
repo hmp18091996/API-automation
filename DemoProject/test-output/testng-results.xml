@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-01T18:01:45 ICT" name="Default suite" finished-at="2022-08-01T18:01:47 ICT" duration-ms="1824">
+  <suite started-at="2022-08-02T23:23:21 ICT" name="Default suite" finished-at="2022-08-02T23:23:25 ICT" duration-ms="3163">
     <groups>
     </groups>
-    <test started-at="2022-08-01T18:01:45 ICT" name="Default test" finished-at="2022-08-01T18:01:47 ICT" duration-ms="1824">
-      <class name="HCE.JwtToken">
-        <test-method signature="getTokenDeviceID()[pri:1, instance:HCE.JwtToken@6a370f4]" started-at="2022-08-01T18:01:45 ICT" name="getTokenDeviceID" finished-at="2022-08-01T18:01:47 ICT" duration-ms="1456" status="PASS">
+    <test started-at="2022-08-02T23:23:21 ICT" name="Default test" finished-at="2022-08-02T23:23:25 ICT" duration-ms="3163">
+      <class name="JIRA.GetToken">
+        <test-method signature="getTokenDeviceID()[pri:1, instance:JIRA.GetToken@5fa07e12]" started-at="2022-08-02T23:23:21 ICT" name="getTokenDeviceID" finished-at="2022-08-02T23:23:25 ICT" duration-ms="3128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTokenDeviceID -->
-        <test-method signature="testPublicKey()[pri:2, instance:HCE.JwtToken@6a370f4]" started-at="2022-08-01T18:01:47 ICT" name="testPublicKey" finished-at="2022-08-01T18:01:47 ICT" duration-ms="61" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testPublicKey -->
-        <test-method signature="handshake()[pri:3, instance:HCE.JwtToken@6a370f4]" started-at="2022-08-01T18:01:47 ICT" name="handshake" finished-at="2022-08-01T18:01:47 ICT" duration-ms="187" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- handshake -->
-        <test-method signature="testDecrypt()[pri:4, instance:HCE.JwtToken@6a370f4]" started-at="2022-08-01T18:01:47 ICT" name="testDecrypt" finished-at="2022-08-01T18:01:47 ICT" duration-ms="85" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDecrypt -->
-      </class> <!-- HCE.JwtToken -->
+      </class> <!-- JIRA.GetToken -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
