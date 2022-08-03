@@ -21,16 +21,6 @@ public class JwtToken {
 	
 	String sessionKey, cipherSessionKey, salt, publicKey, iv, beSessionKey, jwtHandShake, hsObject;
 	
-	private void handshakeOject() {
-		String salt;
-		String sessionkey;
-		String iv;
-		String jwt;
-		String publicKey;
-	
-	}
-	
-	
 	@Test (priority = 1)
 	public void getTokenDeviceID() {
 
@@ -63,8 +53,6 @@ public class JwtToken {
 	
 	@Test  (priority = 3)
 	public void handshake() {
-
-		//System.err.println(payload.handshakePayload(clientPubKey).toString());
 		
 		RestAssured.baseURI = "http://103.161.38.176:8008";
 		String response = given().header("Content-Type","application/json")
