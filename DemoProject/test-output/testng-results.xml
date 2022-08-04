@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-02T23:23:21 ICT" name="Default suite" finished-at="2022-08-02T23:23:25 ICT" duration-ms="3163">
+  <suite started-at="2022-08-04T12:53:14 ICT" name="Default suite" finished-at="2022-08-04T12:53:22 ICT" duration-ms="8076">
     <groups>
     </groups>
-    <test started-at="2022-08-02T23:23:21 ICT" name="Default test" finished-at="2022-08-02T23:23:25 ICT" duration-ms="3163">
+    <test started-at="2022-08-04T12:53:14 ICT" name="Default test" finished-at="2022-08-04T12:53:22 ICT" duration-ms="8076">
       <class name="JIRA.GetToken">
-        <test-method signature="getTokenDeviceID()[pri:1, instance:JIRA.GetToken@5fa07e12]" started-at="2022-08-02T23:23:21 ICT" name="getTokenDeviceID" finished-at="2022-08-02T23:23:25 ICT" duration-ms="3128" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:JIRA.GetToken@2accdbb5]" started-at="2022-08-04T12:53:14 ICT" name="beforeClass" finished-at="2022-08-04T12:53:15 ICT" duration-ms="919" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="getTokenDeviceID()[pri:1, instance:JIRA.GetToken@2accdbb5]" started-at="2022-08-04T12:53:15 ICT" name="getTokenDeviceID" finished-at="2022-08-04T12:53:19 ICT" duration-ms="3499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTokenDeviceID -->
+        <test-method signature="createIssue()[pri:2, instance:JIRA.GetToken@2accdbb5]" started-at="2022-08-04T12:53:19 ICT" name="createIssue" finished-at="2022-08-04T12:53:21 ICT" duration-ms="2190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createIssue -->
+        <test-method signature="addComment()[pri:3, instance:JIRA.GetToken@2accdbb5]" started-at="2022-08-04T12:53:21 ICT" name="addComment" finished-at="2022-08-04T12:53:21 ICT" duration-ms="565" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addComment -->
+        <test-method signature="addAttachment()[pri:4, instance:JIRA.GetToken@2accdbb5]" started-at="2022-08-04T12:53:21 ICT" name="addAttachment" finished-at="2022-08-04T12:53:22 ICT" duration-ms="483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addAttachment -->
+        <test-method signature="getIssue()[pri:5, instance:JIRA.GetToken@2accdbb5]" started-at="2022-08-04T12:53:22 ICT" name="getIssue" finished-at="2022-08-04T12:53:22 ICT" duration-ms="354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getIssue -->
       </class> <!-- JIRA.GetToken -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

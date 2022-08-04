@@ -5,12 +5,14 @@ import static io.restassured.RestAssured.given;
 import java.io.File;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import files.ReUsableMethods;
 import files.payloadForJira;
 import io.restassured.RestAssured;
 import io.restassured.filter.session.SessionFilter;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 
 
@@ -32,16 +34,25 @@ public class GetToken {
 	
 	SessionFilter session;
 	
+	@BeforeClass
+	public void beforeClass() {
+		
+		projectKey = "AAPI";
+		summary = "Create issue in java";
+		desciption = "Automation create issue";
+		issueType = "Bug";
+
+		RestAssured.baseURI = baseUrl;
+		session = new SessionFilter();
+		
+	}
 	
 	
 	@Test (priority = 1)
 	public void getTokenDeviceID() {
-
-		session = new SessionFilter();
 		
-		RestAssured.baseURI = baseUrl;
 		String response = given().relaxedHTTPSValidation()
-		.header("Content-Type","application/json")
+		.contentType(ContentType.JSON) // The same => header("Content-Type","application/json")
 		.body(payloadForJira.getTokenPayload())
 		.log().all().filter(session)
 		.when()
@@ -63,13 +74,9 @@ public class GetToken {
 	@Test (priority = 2)
 	public void createIssue() {
 
-		projectKey = "AAPI";
-		summary = "Create issue in java";
-		desciption = "Automation create issue";
-		issueType = "Bug";
 		
 		RestAssured.baseURI = baseUrl;
-		String response = given().header("Content-Type","application/json")
+		String response = given().contentType(ContentType.JSON) // The same => header("Content-Type","application/json")
 		//.header("cookie",cookie)
 		.body(payloadForJira.createIssue(projectKey, summary, desciption, issueType))
 		.log().all().filter(session)
@@ -92,8 +99,7 @@ public class GetToken {
 
 		comment = "Add comment in java";
 		
-		RestAssured.baseURI = baseUrl;
-		String response = given().header("Content-Type","application/json")
+		String response = given().contentType(ContentType.JSON) // The same => header("Content-Type","application/json")
 		//.header("cookie",cookie)
 		.pathParam("key", issueKey)
 		.body(payloadForJira.addCommentPayload(comment))
@@ -113,9 +119,8 @@ public class GetToken {
 	public void addAttachment() {
 
 		
-		RestAssured.baseURI = baseUrl;
 		String response = given().header("X-Atlassian-Token","no-check")
-		.header("Content-Type","multipart/form-data")
+		.contentType(ContentType.MULTIPART) // The same => header("Content-Type","multipart/form-data")
 		.pathParam("key", issueKey)
 		.multiPart("file", new File("./src/test/resources/attachmentsFile.txt"))
 		.log().all().filter(session)
@@ -151,8 +156,7 @@ public class GetToken {
 			comment = "Add comment in java";
 		}
 		
-		RestAssured.baseURI = baseUrl;
-		String response = given().header("Content-Type","application/json")
+		String response = given().contentType(ContentType.JSON)  // The same => header("Content-Type","application/json")
 		.header("Cookie",cookie)
 		.param("fields", "comment") // Get list comment
 		.pathParam("key", issueKey)
