@@ -7,7 +7,7 @@
         <methods>
           <include name="afterClass"/>
           <include name="beforeClass"/>
-          <include name="TC_01_Login"/>
+          <include name="TC_06_DeleteProduct"/>
         </methods>
       </class> <!-- Ecom.TestCase -->
     </classes>

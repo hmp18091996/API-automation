@@ -12,6 +12,8 @@ import io.restassured.path.json.JsonPath;
 
 public class ReUsableMethods {
 
+	public static final String USER_DIR = System.getProperty("user.dir");
+	
 	public static JsonPath rawToJson(String response) {
 		JsonPath js = new JsonPath(response);
 		return js;
