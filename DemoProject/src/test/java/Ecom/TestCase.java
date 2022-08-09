@@ -1,29 +1,24 @@
 package Ecom;
 
-import org.testng.annotations.Test;
-
-import files.ReUsableMethods;
-
 import static io.restassured.RestAssured.given;
+
+import java.io.File;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import org.testng.annotations.BeforeClass;
-
-import static org.testng.Assert.assertEquals;
-
-import org.testng.annotations.AfterClass;
-
 public class TestCase {
 
-	Login login;
-	RequestSpecification reqSpec;
+	LoginRequest login;
+	RequestSpecification reqSpec, reqSpecCreateProduct;
 	ResponseSpecification resSpec;
 
 	String token, userId;
@@ -31,7 +26,7 @@ public class TestCase {
 	@BeforeClass
 	public void beforeClass() {
 
-		login = new Login();
+		login = new LoginRequest();
 		login.setUserEmail("hmp1809@gmail.com");
 		login.setUserPassword("HMPhuong1809^^");
 		
@@ -48,24 +43,28 @@ public class TestCase {
 		
 		RequestSpecification request = given().log().all().spec(reqSpec).body(login);
 		
-		Response resLogin = request.when().post("api/ecom/auth/login")
-				.then().log().all().spec(resSpec).extract().response();
+		LoginResponse resLogin = request.when().post("api/ecom/auth/login")
+				.then().log().all().spec(resSpec).extract().response().as(LoginResponse.class);
 		
-//		JsonPath js = ReUsableMethods.rawToJson(resLogin.toString());
-//		token = js.getString("token");
-//		userId = js.getString("userId");
-//		
-//		assertEquals(token, token);
-
+		token = resLogin.getToken(); // Get Authorization
+		userId = resLogin.getUserId(); 
 	}
 	
 	@Test
 	public void TC_02_CreateProduct() { 
 		
-		RequestSpecification request = given().log().all().spec(reqSpec).body(login);
+		reqSpecCreateProduct = new RequestSpecBuilder().addHeader("Authorization", token).build();
 		
-		Response resLogin = request.when().post("api/ecom/auth/login")
-				.then().log().all().spec(resSpec).extract().response();
+//		RequestSpecification request = given().log().all().spec(reqSpecCreateProduct)
+//				.param("productName", "Proruct")
+//				.param("productAddedBy", userId)
+//				.param("productCategory", "shirts")
+//				.param("productSubCategory", "shirts")
+//				.param("productPrice", 11500)
+//				.param("productDescription", "Addias Originals")
+//				.param("productFor", "women")
+//				.multiPart("productImage", new File());
+		
 		
 
 	}

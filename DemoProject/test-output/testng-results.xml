@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-08T18:52:50 ICT" name="Default suite" finished-at="2022-08-08T18:52:54 ICT" duration-ms="3412">
+  <suite started-at="2022-08-09T13:01:43 ICT" name="Default suite" finished-at="2022-08-09T13:01:46 ICT" duration-ms="3801">
     <groups>
     </groups>
-    <test started-at="2022-08-08T18:52:50 ICT" name="Default test" finished-at="2022-08-08T18:52:54 ICT" duration-ms="3412">
+    <test started-at="2022-08-09T13:01:43 ICT" name="Default test" finished-at="2022-08-09T13:01:46 ICT" duration-ms="3801">
       <class name="Ecom.TestCase">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ecom.TestCase@483f6d77]" started-at="2022-08-08T18:52:50 ICT" name="beforeClass" finished-at="2022-08-08T18:52:52 ICT" duration-ms="1109" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ecom.TestCase@7e5afaa6]" started-at="2022-08-09T13:01:43 ICT" name="beforeClass" finished-at="2022-08-09T13:01:44 ICT" duration-ms="1160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="TC_01_Login()[pri:0, instance:Ecom.TestCase@483f6d77]" started-at="2022-08-08T18:52:52 ICT" name="TC_01_Login" finished-at="2022-08-08T18:52:54 ICT" duration-ms="2244" status="PASS">
+        <test-method signature="TC_01_Login()[pri:0, instance:Ecom.TestCase@7e5afaa6]" started-at="2022-08-09T13:01:44 ICT" name="TC_01_Login" finished-at="2022-08-09T13:01:46 ICT" duration-ms="2582" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_01_Login -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:Ecom.TestCase@483f6d77]" started-at="2022-08-08T18:52:54 ICT" name="afterClass" finished-at="2022-08-08T18:52:54 ICT" duration-ms="2" status="PASS">
+        <test-method signature="TC_02_CreateProduct()[pri:0, instance:Ecom.TestCase@7e5afaa6]" started-at="2022-08-09T13:01:46 ICT" name="TC_02_CreateProduct" finished-at="2022-08-09T13:01:46 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_CreateProduct -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Ecom.TestCase@7e5afaa6]" started-at="2022-08-09T13:01:46 ICT" name="afterClass" finished-at="2022-08-09T13:01:46 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

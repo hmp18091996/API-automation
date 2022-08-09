@@ -1,6 +1,6 @@
 package Ecom;
 
-public class Login {
+public class LoginRequest {
 
 	private String userEmail;
 	private String userPassword;
